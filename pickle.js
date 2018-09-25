@@ -31,4 +31,23 @@ doPickle = function() {
   }
   p.innerHTML = pi;
   [h, p, hi, pi, w, j, c, x, humanWords, pickleWords].log();
+  pickleTweet();
+}
+function pickleTweet () {
+  this.tweet = '';
+  //https://bit.ly/2xTaNmu
+  var h = document.getElementById('humanText').value;
+  var p = document.getElementById('pickleText').value;
+  var ha = h.split(' ');
+  var pa = p.split(' ');
+  p = pa.join('%20');
+  h = ha.join('%20');
+  var t = document.getElementById('title');
+  var a = document.getElementById('tweet');
+  console.log(a);
+  document.body.removeChild(a);
+  a = document.createElement('div');
+  a.setAttribute("id", "tweet");
+  a.innerHTML = '<br>\n<a class=\"t\" href=\"https://twitter.com/intent/tweet?text=%22' + h + "%22%20in%20pickle%20is%20%22" + p + '%22%20chocolatecircus445.github.io/talk-like-a-pickle\">🐦 Annoy your friends on Twitter</a>'
+  document.body.appendChild(a);
 }
