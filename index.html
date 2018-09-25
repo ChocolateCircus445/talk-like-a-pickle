@@ -4,6 +4,37 @@
   <script src="pickle.js"></script>
   <title>Talk like a pickle!</title>
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+  <style>
+  a.t {
+    background-color: #1b95e0;
+    color: white;
+    text-decoration: none;
+    font-family: arial;
+    border-style: solid;
+    border-color: #1b95e0;
+
+  }
+  </style>
+  <meta name="twitter:title" content="Talk like a pickle">
+  <meta name="twitter:image" content="http://cdn.shopify.com/s/files/1/1267/1741/products/pickle1_grande.jpg?v=1463278258">
+  <meta name="twitter:url" content="https://chocolatecircus445.github.io/talk-like-a-pickle">
+  <meta name="twitter:description" content="For those who want to talk like a pickle">
   <meta name="description" content="You can learn how to talk like a pickle!">
   <meta name="keywords" content="pickle,talk,like,weird">
   <meta name="author" content="ChocolateCircus445">
@@ -19,5 +50,9 @@
   <textarea id="pickleText" columns="40" rows="5" readonly style="resize: none;"></textarea>
   <br>
   <button id="picklefy" onclick="doPickle()">Picklefy! 🥒</button>
+  <div id="tweet">
+    <br>
+    <a class="t" href="https://twitter.com/intent/tweet">🐦 Annoy your friends on Twitter</a>
+  </div>
 </body>
 </html>
