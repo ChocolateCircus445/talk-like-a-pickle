@@ -1,6 +1,7 @@
 var humanWords = [];
 var pickleWords = [];
 var compounds = ['b', 'd', 'f', 'ft', 'g', 'fg', 'j', 'h', 'hh', 'k', 'glk', 'n', 'ng', 's', 't', 'v'];
+document.getElementById('humanText').innerHTML = ''; //For Firefox
 
 doPickle = function() {
   var h = document.getElementById('humanText');
