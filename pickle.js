@@ -1,6 +1,12 @@
 var humanWords = [];
 var pickleWords = [];
 var compounds = ['b', 'd', 'f', 'ft', 'g', 'fg', 'j', 'h', 'hh', 'k', 'glk', 'n', 'ng', 's', 't', 'v'];
+if (new Date().getMonth() == 11 && new Date().getDate() == 14) {
+  var isPickleDay = true;
+} else {
+  var isPickleDay = false;
+}
+
 
 
 doPickle = function() {
@@ -34,6 +40,7 @@ doPickle = function() {
   [h, p, hi, pi, w, j, c, x, humanWords, pickleWords].log();
   pickleTweet();
 }
+
 function pickleTweet () {
   this.tweet = '';
   //https://bit.ly/2xTaNmu
@@ -49,6 +56,10 @@ function pickleTweet () {
   document.body.removeChild(a);
   a = document.createElement('div');
   a.setAttribute("id", "tweet");
-  a.innerHTML = '<br>\n<a class=\"t\" href=\"https://twitter.com/intent/tweet?text=%22' + h + "%22%20in%20pickle%20is%20%22" + p + '%22%20chocolatecircus445.github.io/talk-like-a-pickle\">🐦 Annoy your friends on Twitter</a>'
+  a.innerHTML = '<br>\n<a class=\"t\" href=\"https://twitter.com/intent/tweet?text=%22' + h + "%22%20in%20pickle%20is%20%22" + p + '%22%20chocolatecircus445.github.io/talk-like-a-pickle\"><i class=\"fab fa-twitter\"></i><span> Annoy your friends on Twitter</span></a>'
   document.body.appendChild(a);
+}
+
+function doLaunchInfo () {
+  var w = window.open("https://chocolatecircus445.github.io/talk-like-a-pickle/info.html", "", "width=960,height=720");
 }
