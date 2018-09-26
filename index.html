@@ -2,8 +2,9 @@
 <head>
   <script src="easy.js"></script>
   <script src="pickle.js"></script>
-  <title>Talk like a pickle!</title>
-  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <meta name="description" content="You can learn how to talk like a pickle!">
+  <meta name="keywords" content="pickle,talk,like,weird">
+  <meta name="author" content="ChocolateCircus445">
   <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
     t = window.twttr || {};
@@ -30,30 +31,76 @@
     border-color: #1b95e0;
 
   }
+  button.whatisthis {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  @font-face {
+    font-family: 'walmart';
+    src: url('wf.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .icon-Walmart-logo:before {
+  font-family: 'walmart' !important;
+  content: "\e900";
+  color: yellow;
+  }
+  a.imTooLazyToManuallySetStyles {
+    background-color: #15722b;
+    color: white;
+    text-decoration: none;
+    font-family: arial;
+    border-style: solid;
+    border-color: #15722b;
+  }
   </style>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <meta name="twitter:title" content="Talk like a pickle">
   <meta name="twitter:image" content="http://cdn.shopify.com/s/files/1/1267/1741/products/pickle1_grande.jpg?v=1463278258">
   <meta name="twitter:url" content="https://chocolatecircus445.github.io/talk-like-a-pickle">
   <meta name="twitter:description" content="For those who want to talk like a pickle">
-  <meta name="description" content="You can learn how to talk like a pickle!">
-  <meta name="keywords" content="pickle,talk,like,weird">
-  <meta name="author" content="ChocolateCircus445">
+  <title id="title">Talk like a pickle!</title>
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 </head>
 <body>
+  <script>
+  if (isPickleDay) {
+    document.write("<a class=\"imTooLazyToManuallySetStyles\">Today is National Pickle Day!</a>")
+  }
+  </script>
+  <button class="whatisthis" onclick="doLaunchInfo()">Just what the pickle is this?</button>
   <h1>Talk like a pickle</h1>
   <p>Have you ever wanted to talk like a <span style="color:green;">pickle</span>?</p>
   <h4>Now you can!</h4>
-  <br>
+  <div id="pickleDay"></div>
+  <script>
+  if (isPickleDay) {
+    var d = document.getElementById('pickleDay');
+    d.innerHTML = '<audio controls>\n<source src="pickle song.mp3" type="audio/mpeg">\nYour browser does not support the audio element.\n</audio>'
+    document.body.setAttribute("style", "background-image: url(\"http://cdn.shopify.com/s/files/1/1267/1741/products/pickle1_grande.jpg?v=1463278258\"); background-repeat: no-repeat; background-size: 100%;");
+    document.write("<p>Hey, Morty! I turned myself into a pickle!</p>\n<p>I'm...a dead meme</p>\n<p>sad</p><img src=\"aaaaa.jpg\" width=\"25%\" height=\"25%\">")
+  }
+
+  </script>
   <p>Human text:</p>
   <textarea id="humanText" name="humanText" columns="40" rows="5" style="resize: none;"></textarea>
-  <script>document.getElementById('humanText').innerHTML = ''; //For Firefox</script>
+  <script>document.getElementById('humanText').value = ''; //For Firefox</script>
   <p>Pickle text:</p>
   <textarea id="pickleText" columns="40" rows="5" readonly style="resize: none;"></textarea>
   <br>
-  <button id="picklefy" onclick="doPickle()">Picklefy! 🥒</button>
+  <button id="picklefy" onclick="doPickle()">Picklefy! &#129362;</button>
+  <br>
   <div id="tweet">
     <br>
-    <a class="t" href="https://twitter.com/intent/tweet">🐦 Annoy your friends on Twitter</a>
+    <a class="t" href="https://twitter.com/intent/tweet"><i class="fab fa-twitter"></i><span> Annoy your friends on Twitter</span></a>
   </div>
+  <script>
+  if (isPickleDay) {
+      document.write("<br>\n<a href=\"https://www.walmart.com/ip/3-Pack-Vlasic-Kosher-Dill-Pickle-Spears-24-oz/47229255\" style=\"text-decoration: none; color: yellow; background-color: blue; border-style: solid; border-color: blue; font-family: arial;\"><span class=\"icon-Walmart-logo\"></span> While you're at it, why not go buy some pickles at Walmart?</a>\n<p>No, I wasn't paid for that.</p>");
+  }
+
+  </script>
 </body>
 </html>
