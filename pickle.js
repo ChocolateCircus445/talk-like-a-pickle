@@ -52,12 +52,8 @@ function pickleTweet () {
   h = ha.join('%20');
   var t = document.getElementById('title');
   var a = document.getElementById('tweet');
-  console.log(a);
-  document.body.removeChild(a);
-  a = document.createElement('div');
-  a.setAttribute("id", "tweet");
-  a.innerHTML = '<br>\n<a class=\"t\" href=\"https://twitter.com/intent/tweet?text=%22' + h + "%22%20in%20pickle%20is%20%22" + p + '%22%20chocolatecircus445.github.io/talk-like-a-pickle\"><i class=\"fab fa-twitter\"></i><span> Annoy your friends on Twitter</span></a>'
-  document.body.appendChild(a);
+  var tweet = '\"https://twitter.com/intent/tweet?text=%22' + h + "%22%20in%20pickle%20is%20%22" + p + '%22%20chocolatecircus445.github.io/talk-like-a-pickle\"'
+  a.innerHTML = '<br>\n<a class=\"t\" href=' + tweet + ' target=\"_blank\"><i class=\"fab fa-twitter\"></i><span> Annoy your friends on Twitter</span></a>';
 }
 
 function doLaunchInfo () {
